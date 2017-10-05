@@ -1,1 +1,18 @@
-.body 				{ box-sizing: border-box; }
+.body { 
+	box-sizing: border-box; 
+}
+
+.navbar-brand {
+  padding: 0px;
+  height: 60px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 10px;
+  width: auto;
+}
+
+.nav >li >a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
