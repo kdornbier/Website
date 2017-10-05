@@ -1,288 +1,38 @@
-<!--
-
-Programmer: 		Kaitlyn Dornbier
-Date:				4/7/2017
-Original tutorial: 	https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Game_over
-
--->
-
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Ms. Sullivan's Classroom</title>
-    <!-- This is CSS, it manages colors, sizes, and more!  -->
-    <style>
-        * { padding: 0; margin: 0; box-sizing: border-box; }
-        canvas { background: #ffdb3a; display: block; margin: 0 auto; }
-        .studentGrade {width: 96px; height: 200px; color: #7103ba; font-family: Arial; float: left; margin-top: 20px; font-size: 14px; padding-left: 10px;}
-        .gradeHeader {width: 100%; font-family: Arial; color: red; font-size: 14px; text-decoration:underline; float: left; text-align: center; padding-bottom: 5px;}
-    </style>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- This is HTML, it is the 'bones' of a website! -->
-<!--Rectangle for game -->
-<canvas id="myCanvas" width="480" height="380"></canvas>
-
-<div style = "width: 480px; margin: 0 auto;">
-	<div id="A" class="studentGrade">
-		<div class="gradeHeader">A Students</div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  	<nav class="navbar navbar-inverse">
+	  	<ul class="nav justify-content-end navbar-nav">
+		  <li class="nav-item">
+		    <a class="nav-link active" href="#">About</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Resume</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Skills</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Contact</a>
+		  </li>
+		</ul>
+	</nav>
+    <div class="container">
+    	<h1>Hello, world!</h1>
 	</div>
-
-	<div id="B" class="studentGrade">
-		<div class="gradeHeader">B Students</div>
-	</div>
-
-	<div id="C" class="studentGrade">
-		<div class="gradeHeader">C Students</div>
-	</div>
-
-	<div id="D" class="studentGrade">
-		<div class="gradeHeader">D Students</div>
-	</div>
-
-	<div id="F" class="studentGrade">
-		<div class="gradeHeader">F Students</div>
-	</div>
-</div>
-
-<!-- This is JavaScript, it is the brains of this website!  -->
-<script>
-    // JavaScript code goes here
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-
-    // Movement of ball
-    var x = canvas.width/2;
-	var y = canvas.height-30;
-	var dx = 2;
-	var dy = -2;
-
-	//Ball variables
-	var ballRadius = 14;
-
-	//Paddle variables
-	var paddleHeight = 20;
-	var paddleWidth = 75;
-	var paddleX = (canvas.width-paddleWidth)/2;
-	var rightPressed = false;
-	var leftPressed = false;
-
-	//Bricks variables
-	var brickRowCount = 6;
-	var brickColumnCount = 4;
-	var brickWidth = 100;
-	var brickHeight = 20;
-	var brickPadding = 10;
-	var brickOffsetTop = 30;
-	var brickOffsetLeft = 30;
-
-	//Student bricks
-	var bricks = [];
-
-	for(c=0; c<brickColumnCount; c++) {
-	    bricks[c] = [];
-	    for(r=0; r<brickRowCount; r++) {
-	        bricks[c][r] = { x: 0, y: 0, status: 1 };
-	    }
-	}
-
-	//Grade array
-	grade = ["A", "B", "C", "D", "F"];
-	currentGrade = 0;
-
-	//Random array of student names
-	var studentNames = [["Kollin", "Ary", "Aaron", "Wyatt"],
-						["Will", "Ava", "Braydyn", "Addi"],
-						["Tessa", "Savana", "Noah", "Colin"],
-						["Olin", "Elena", "Jackson", "Ethan"],
-						["Kaitlyn", "Eddie", "Taylor", "Trey"],
-						["Ashley", "Makayla", "Kennedy", ""]];
-
-	// Function to randomize list of names
-	function shuffleArray(array) {
-	    for (var i = array.length - 1; i > 0; i--) {
-	        var j = Math.floor(Math.random() * (i + 1));
-	        var temp = array[i];
-	        array[i] = array[j];
-	        array[j] = temp;
-	    }
-	    return array;
-	}
-
-	// Calling function to shuffle names
-	studentNames = shuffleArray(studentNames);
-
-	var score = 0;
-	var lives = 3;
-
-	// This waits for you to press the left and right arrow
-	document.addEventListener("keydown", keyDownHandler, false);
-	document.addEventListener("keyup", keyUpHandler, false);
-
-	function keyDownHandler(e) {
-	    if(e.keyCode == 39) {
-	        rightPressed = true;
-	    }
-	    else if(e.keyCode == 37) {
-	        leftPressed = true;
-	    }
-	}
-
-	function keyUpHandler(e) {
-	    if(e.keyCode == 39) {
-	        rightPressed = false;
-	    }
-	    else if(e.keyCode == 37) {
-	        leftPressed = false;
-	    }
-	}
-
-	//Collision detection
-	function collisionDetection() {
-	    for(c=0; c<brickColumnCount; c++) {
-	        for(r=0; r<brickRowCount; r++) {
-	            var b = bricks[c][r];
-	            if(b.status == 1) {
-	                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
-	                    dy = -dy;
-	                    b.status = 0;
-	                    document.getElementById(grade[currentGrade]).innerHTML += studentNames[r][c] + "<br>";
-	                    randomGrade = Math.floor((Math.random() * grade.length) + 1);
-	                    currentGrade = (currentGrade + randomGrade) % grade.length;
-	                    score++;
-	                    if(score == brickRowCount*brickColumnCount) {
-	                        alert("ALL STUDENTS GRADED!");
-	                        document.location.reload();
-	                    }
-	                }
-	            }
-	        }
-	    }
-	}
-
-	//Draw the score
-	function drawScore() {
-	    ctx.font = "16px Arial";
-	    ctx.fillStyle = "#7103ba";
-	    ctx.fillText("Score: "+score, 8, 20);
-	}
-
-	//Draw the lives
-	function drawLives() {
-	    ctx.font = "16px Arial";
-	    ctx.fillStyle = "#7103ba";
-	    ctx.fillText("Lives: "+lives, canvas.width-65, 20);
-	}
-
-	//Drawing the ball
-	function drawBall() {
-		//Drawing a ball
-	    /*ctx.beginPath();
-	    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-	    ctx.fillStyle = "#7103ba";
-	    ctx.fill();
-	    ctx.closePath();*/
-
-	    //Grade text
-	    ctx.beginPath();
-	    ctx.fillStyle = "#ff0505";
-	    ctx.font = "26px Arial";
-	    ctx.fillText(grade[currentGrade], x-8, y+8);
-	    ctx.closePath();
-	}
-
-	//Drawing the paddle
-	function drawPaddle() {
-	    ctx.beginPath();
-	    ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-	    ctx.fillStyle = "#7103ba";
-	    ctx.fill();
-	    ctx.closePath();
-
-	    //Ms. Sullivan name
-	    ctx.beginPath();
-	    ctx.fillStyle = "#ffffff";
-	    ctx.font = "12px Arial";
-	    ctx.fillText("Ms. Sullivan", paddleX + 3, canvas.height - 6);
-	    ctx.closePath();
-	}
-
-	//Drawing the bricks
-	function drawBricks() {
-	    for(c=0; c<brickColumnCount; c++) {
-	        for(r=0; r<brickRowCount; r++) {
-	             if(bricks[c][r].status == 1) {
-	                var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
-	                var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
-	                bricks[c][r].x = brickX;
-	                bricks[c][r].y = brickY;
-	                ctx.beginPath();
-	                ctx.rect(brickX, brickY, brickWidth, brickHeight);
-	                ctx.fillStyle = "#7103ba";
-	                ctx.fill();
-	                ctx.closePath();
-
-	                ctx.beginPath();
-	                ctx.fillStyle = "#ffffff";
-	                ctx.font = "12px Arial";
-	                ctx.fillText(studentNames[r][c], brickX + 10, brickY + 14);
-	                ctx.closePath();
-	            }
-	        }
-	    }
-	}
-
-	//Drawing the rectangle
-	function draw() {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-	    drawBall();
-	    drawPaddle();
-	    drawScore();
-	    drawLives();
-	    collisionDetection();
-	    drawBricks();
-	    x += dx;
-	    y += dy;
-
-		if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
-		    dx = -dx;
-		}
-		if(y + dy < ballRadius) {
-		    dy = -dy;
-		} else if(y + dy > canvas.height-ballRadius) {
-		    if(x > paddleX && x < paddleX + paddleWidth) {
-		        dy = -dy;
-		    }
-		    else {
-				lives--;
-				if(!lives) {
-				    alert("GAME OVER");
-				    document.location.reload();
-				}
-				else {
-				    x = canvas.width/2;
-				    y = canvas.height-30;
-				    dx = 2;
-				    dy = -2;
-				    paddleX = (canvas.width-paddleWidth)/2;
-				}
-		    }
-		}
-
-		if(rightPressed && paddleX < canvas.width-paddleWidth) {
-		    paddleX += 7;
-		}
-		else if(leftPressed && paddleX > 0) {
-		    paddleX -= 7;
-		}
-		requestAnimationFrame(draw);
-	}								
-
-	draw();
-
-</script>
-
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </body>
 </html>
