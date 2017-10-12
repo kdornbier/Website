@@ -1,5 +1,24 @@
 .body { 
-	box-sizing: border-box; 
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif !important; 
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+p {
+  font-size: 12px;
 }
 
 .navbar {
@@ -10,6 +29,12 @@
 	background-color: transparent;
   	background: transparent;
   	border-color: transparent;
+  	font-family: 'Open Sans', sans-serif;
+  	padding:10px 20px;
+}
+
+.icon-bar {
+	background-color: #000000 !important;
 }
 
 .navbar-brand {
@@ -25,7 +50,8 @@
   color: #ffffff;
 }
 
-a, .navbar-inverse .navbar-nav>li>a { color: black;
+a, .navbar-inverse .navbar-nav>li>a { 
+	color: black;
 }
 
 .nav >li >a {
@@ -51,19 +77,87 @@ a, .navbar-inverse .navbar-nav>li>a { color: black;
 #home>img{
 	width:100%;
 }
-
+/* f9cac0  */
 #about {
-  	background-color: #f9cac0;
+  	background-color: #ffdbea;
 }
 
-#resume {
-	background-color:green;
+#experience {
+	background-color:#ffffff;
+}
+
+#education {
+	background-color:#d1d1d1;
 }
 
 #skills {
-	background-color:yellow;
+	background-color:#ffffff;
 }
 
 #contact {
-	background-color: gray;
+	background-color: grey;
+}
+
+.container-fluid {
+	padding: 50px;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+}
+
+.row {
+	float: none;
+  margin: 0 auto;
+}
+
+#bio {
+	text-align: left;
+}
+
+.timeline-date {
+  
+  margin: 20px;
+}
+
+.timeline-bar-left{
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  width: 2px;
+  height: 100%;
+  background-color: #000000;
+}
+
+.timeline-bar-left:after,
+.timeline-bar-right:after{
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  content: "";
+}
+
+.timeline-bar-right {
+  position: absolute;
+  top: 0px;
+  right: -1px;
+  width: 2px;
+  height: 100%;
+  background-color: #000000;
+}
+
+.timeline-info {
+  
+  margin: 20px;
+  text-align: left;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.ta-right {
+  text-align: right;
+
 }
