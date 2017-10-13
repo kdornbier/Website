@@ -87,7 +87,7 @@ a, .navbar-inverse .navbar-nav>li>a {
 }
 
 #education {
-	background-color:#d1d1d1;
+	background-color:#e5e5e5;
 }
 
 #skills {
@@ -95,7 +95,7 @@ a, .navbar-inverse .navbar-nav>li>a {
 }
 
 #contact {
-	background-color: grey;
+	background-color: #e5e5e5;
 }
 
 .container-fluid {
@@ -160,4 +160,18 @@ a, .navbar-inverse .navbar-nav>li>a {
 .ta-right {
   text-align: right;
 
+}
+
+.edu-half {
+  background-color: #ffffff;
+  text-align: left;
+  border: 5px solid #e5e5e5;
+}
+
+.edu-data {
+
+}
+
+.edu-info {
+  border-bottom: 2px solid #e5e5e5;
 }
