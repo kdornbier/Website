@@ -5,6 +5,11 @@
 
 h1 {
   font-family: 'Raleway', sans-serif;
+  padding-bottom: 20px;
+  text-align: left;
+  border-left: 5px solid black;
+  padding-left: 20px;
+  line-height: 40px;
 }
 
 h2 {
@@ -27,10 +32,10 @@ p {
 	margin-bottom:0px;
 	background:rgba(0,0,0,0.5);
 	background-color: transparent;
-  	background: transparent;
-  	border-color: transparent;
-  	font-family: 'Open Sans', sans-serif;
-  	padding:10px 20px;
+  background: transparent;
+  border-color: transparent;
+  font-family: 'Open Sans', sans-serif;
+  padding:10px 20px;
 }
 
 .icon-bar {
@@ -77,9 +82,9 @@ a, .navbar-inverse .navbar-nav>li>a {
 #home>img{
 	width:100%;
 }
-/* f9cac0  */
+/* ffdbea  */
 #about {
-  	background-color: #ffdbea;
+  	background-color: #f2f2f2;
 }
 
 #experience {
@@ -87,7 +92,7 @@ a, .navbar-inverse .navbar-nav>li>a {
 }
 
 #education {
-	background-color:#e5e5e5;
+	background-color:#f2f2f2;
 }
 
 #skills {
@@ -95,7 +100,7 @@ a, .navbar-inverse .navbar-nav>li>a {
 }
 
 #contact {
-	background-color: #e5e5e5;
+	background-color: #f2f2f2;
 }
 
 .container-fluid {
@@ -109,12 +114,81 @@ a, .navbar-inverse .navbar-nav>li>a {
   margin: 0 auto;
 }
 
-#bio {
+.bio {
 	text-align: left;
 }
 
+.headshot {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.signature {
+  width: 200px;
+  float: right;
+  margin-bottom: 40px;
+}
+
+.bio-scale {
+  font-size: 12px;
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 8px solid #e5e5e5;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.bio-scale-bar {
+  position: absolute;
+  top: 0px;
+  height: 34px;
+  border-bottom: 8px solid #000000;
+  text-align: right;
+  line-height: 40px;
+  padding-right: 2px;
+}
+
+.bio-scale-bar::after {
+  height: 40px;
+  width: 3px;
+  background-color: #000000;
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -3px;
+}
+
+.download-resume {
+  margin-top: 40px;
+  display: inline-block;
+  background-color: black;
+  color: #f2f2f2;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.download-resume a{
+  color: #f2f2f2;
+  display: block;
+}
+
+.download-resume a:hover {
+  background-color: #e5e5e5;
+  color: #000000;
+  text-decoration: none;
+}
+
+.interests {
+  text-align: center;
+}
+
+.interests img {
+  height: 60px;
+  padding-top:10px;
+}
+
 .timeline-date {
-  
   margin: 20px;
 }
 
@@ -128,7 +202,7 @@ a, .navbar-inverse .navbar-nav>li>a {
 }
 
 .timeline-bar-left:after,
-.timeline-bar-right:after{
+.timeline-bar-right:after {
   position: absolute;
   top: 20px;
   left: -10px;
@@ -165,7 +239,7 @@ a, .navbar-inverse .navbar-nav>li>a {
 .edu-half {
   background-color: #ffffff;
   text-align: left;
-  border: 5px solid #e5e5e5;
+  border: 5px solid #f2f2f2;
 }
 
 .edu-data {
@@ -173,5 +247,5 @@ a, .navbar-inverse .navbar-nav>li>a {
 }
 
 .edu-info {
-  border-bottom: 2px solid #e5e5e5;
+  border-bottom: 2px solid #f2f2f2;
 }
