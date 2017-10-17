@@ -58,6 +58,7 @@ p {
 
 a, .navbar-inverse .navbar-nav>li>a{ 
 	color: black;
+  min-width: 60px;
 }
 
 .navbar-collapse.collapsing > ul > li > a:hover,
@@ -255,6 +256,58 @@ https://codepen.io/bamf/pen/jEpxOX */
   right: -3px;
 }
 
+.bb-90 {
+  animation-name: bio-bar-90;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.bb-85 {
+  animation-name: bio-bar-85;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.bb-80 {
+  animation-name: bio-bar-80;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.bb-75 {
+  animation-name: bio-bar-75;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes bio-bar-90 {
+    from {width:0%;}
+    to {width: 90%;}
+}
+
+@keyframes bio-bar-85 {
+    from {width:0%;}
+    to {width: 85%;}
+}
+
+@keyframes bio-bar-80 {
+    from {width:0%;}
+    to {width: 80%;}
+}
+
+@keyframes bio-bar-75 {
+    from {width:0%;}
+    to {width: 75%;}
+}
+
 .download-resume {
   margin-top: 40px;
   display: inline-block;
@@ -294,7 +347,7 @@ https://codepen.io/bamf/pen/jEpxOX */
   position: absolute;
   top: 0px;
   left: -2px;
-  width: 4px;
+  width: 2px;
   height: 100%;
   background-color: #000000;
 }
@@ -324,6 +377,35 @@ https://codepen.io/bamf/pen/jEpxOX */
 .timeline-info {
   margin: 20px;
   text-align: left;
+}
+
+@keyframes slideDown {
+  from {max-height:0px;}
+  to {max-height: 1000px;}
+}
+
+@media (min-width: 992px){
+
+   .timeline p {
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.25s linear;
+  }
+
+  .timeline:hover p {
+    max-height: 100px;
+    -webkit-transition: max-height 0.5s linear;
+  }
+
+  .timeline:hover .timeline-date{
+    color: #f9cac0;
+    -webkit-transition: color 0.5s linear;
+  }
+
+  .timeline:hover div > div{
+    background-color: #f8f8f8;
+    -webkit-transition: background-color 0.5s linear;
+  }
 }
 
 .ta-left {
