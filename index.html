@@ -13,6 +13,7 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -29,19 +30,33 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 	      		<img src="images/icon-small.png" alt="Kaitlyn Dornbier">
 	      </a>
 	    </div>
-	    <div class="collapse navbar-collapse" id="header-menu">
-	      <ul class="nav navbar-nav navbar-right">
+	    <div class="collapse navbar-collapse" style="float: right"id="header-menu">
+
+	      <ul class="nav navbar-nav">
 	        <li><a href="#">Home</a></li>
 	        <li><a href="#about">About</a></li>
 	        <li><a href="#experience">Resume</a></li> 
 	        <li><a href="#skills">Skills</a></li> 
 	        <li><a href="#contact">Contact</a></li> 
 	      </ul>
+	      <ul class="nav navbar-nav social-media-nav">
+	        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+	        <li><a href="#"><i class="fa fa-git" aria-hidden="true"></i></a></li>
+	        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+	      </ul>
+	      
 	    </div>
 	</nav>
     
 	<div class="jumbotron jumbotron-fluid" id="home">
-	    <img src="images/IMG_1637.JPG">
+	    <!--<div class="ba-slider">
+		  <img src="images/IMG_4443.PNG" alt="">       
+		  <div class="resize">
+		    <img src="image/masthead-creative.png" alt="">
+		  </div>
+		  <span class="handle"></span>
+		</div>-->
+		<img src="images/IMG_1637.JPG" alt="">
 	</div>
 
 	<div class="container-fluid" id="about">
@@ -89,7 +104,7 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<!--<div class="row">
 			<div class="col-xs-12 col-sm-offset-2  col-sm-8 col-lg-offset-3 col-lg-6">
 				<div class="interests ta-left">
 					
@@ -120,7 +135,7 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 	</div><!-- end of about -->
 	<div class="container-fluid" id="experience">
 		<div class="row">
@@ -302,7 +317,23 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 				</div>
 			</div>
 		</div>
-
+	</div>
+	<div class="container-fluid" id="skills">
+		<div class="row">
+			<div class="col">
+				<h1>Skills</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-2">
+				<div class="radial-progess" data-anim="base wrapper">
+					<div class="circle">
+					    <div class="fill"></div>
+					</div>
+				</div>
+				<h4>Javascript</h4>
+			</div>
+		</div>
 	</div>
 	<div class="container-fluid" id="education">
 		<div class="row">
@@ -311,7 +342,7 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6 edu-half">
+			<div class="col-sm-6 col-lg-offset-1 col-lg-5 edu-half">
 				<div class="row">
 					<div class="col">
 						<h2>Degrees</h2>
@@ -354,7 +385,7 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 edu-half">
+			<div class="col-sm-6 col-lg-5 edu-half">
 				<div class="row">
 					<div class="col">
 						<h2>Projects</h2>
@@ -401,13 +432,6 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 		</div>
 		</div>
 	</div>
-	<div class="container-fluid" id="skills">
-		<div class="row">
-			<div class="col">
-				<h1>Skills</h1>
-			</div>
-		</div>
-	</div>
 	<div class="container-fluid" id="contact">
 		<div class="row">
 			<div class="col">
@@ -422,5 +446,6 @@ https://codepen.io/bootstrapped/pen/KwYGwq
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
