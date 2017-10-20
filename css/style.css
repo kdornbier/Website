@@ -477,8 +477,19 @@ https://codepen.io/bamf/pen/jEpxOX */
 /******************** skill bar ***************/
 
 .skill-container {
-  max-width: 800px;
   margin: 0 auto;
+  min-width: 100px;
+}
+
+@media (min-width: 480px){
+  .skill-container {
+    max-width: 300px;
+}
+
+@media (min-width: 768px){
+  .skill-container {
+    max-width: 600px;
+  }
 }
 
 .skill-content {
@@ -488,9 +499,9 @@ https://codepen.io/bamf/pen/jEpxOX */
 
 /* https://bootsnipp.com/snippets/featured/circle-progress-bar */
 .skill{
-    width: 150px;
-    height: 150px;
-    line-height: 150px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
     background: none;
     margin: 0 auto;
     box-shadow: none;
@@ -502,7 +513,7 @@ https://codepen.io/bamf/pen/jEpxOX */
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 12px solid #ffffff;
+    border: 8px solid #ffffff;
     position: absolute;
     top: 0;
     left: 0;
@@ -524,7 +535,7 @@ https://codepen.io/bamf/pen/jEpxOX */
     width: 100%;
     height: 100%;
     background: none;
-    border-width: 12px;
+    border-width: 8px;
     border-style: solid;
     position: absolute;
     top: 0;
@@ -559,7 +570,7 @@ https://codepen.io/bamf/pen/jEpxOX */
     background: transparent;
     font-size: 24px;
     color: #000000;
-    line-height: 135px;
+    line-height: 95px;
     text-align: center;
     position: absolute;
     top: 5%;
@@ -570,12 +581,28 @@ https://codepen.io/bamf/pen/jEpxOX */
     border-color: #f9cac0;
 }
 
+.skill.sb-60 .skill-left .skill-bar{
+    animation: loading-60 1.5s linear forwards 1.8s;
+}
+
+.skill.sb-65 .skill-left .skill-bar{
+    animation: loading-65 1.5s linear forwards 1.8s;
+}
+
+.skill.sb-70 .skill-left .skill-bar{
+    animation: loading-70 1.5s linear forwards 1.8s;
+}
+
 .skill.sb-75 .skill-left .skill-bar{
     animation: loading-75 1.5s linear forwards 1.8s;
 }
 
 .skill.sb-80 .skill-left .skill-bar{
     animation: loading-80 1.5s linear forwards 1.8s;
+}
+
+.skill.sb-85 .skill-left .skill-bar{
+    animation: loading-85 1.5s linear forwards 1.8s;
 }
 
 .skill.sb-90 .skill-left .skill-bar{
@@ -601,6 +628,39 @@ https://codepen.io/bamf/pen/jEpxOX */
     }
 }
 
+@keyframes loading-60{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+
+@keyframes loading-65{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(54deg);
+        transform: rotate(54deg);
+    }
+}
+
+@keyframes loading-70{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(72deg);
+        transform: rotate(72deg);
+    }
+}
+
 @keyframes loading-75{
     0%{
         -webkit-transform: rotate(0deg);
@@ -620,6 +680,17 @@ https://codepen.io/bamf/pen/jEpxOX */
     100%{
         -webkit-transform: rotate(108deg);
         transform: rotate(108deg);
+    }
+}
+
+@keyframes loading-85{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(126deg);
+        transform: rotate(126deg);
     }
 }
 
@@ -654,6 +725,29 @@ https://codepen.io/bamf/pen/jEpxOX */
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
     }
+}
+
+.carousel-indicators {
+  bottom: -15px;
+  z-index: 9999;
+}
+
+.carousel-control {
+  background-image: none !important;
+  color: #e5e5e5 !important;
+  text-shadow: none !important;
+}
+
+.carousel-control:hover {
+  color: #f8f8f8;
+}
+
+.carousel-indicators .active {
+  background-color: black;
+}
+
+.carousel-indicators li {
+  border-color: black;
 }
 
 /******************** skill bar ***************/
