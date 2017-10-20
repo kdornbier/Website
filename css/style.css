@@ -207,6 +207,10 @@ https://codepen.io/bamf/pen/jEpxOX */
 	background-color:#ffffff;
 }
 
+#blurb {
+  background-color:#a8a8a8;
+}
+
 #contact {
 	background-color: #f8f8f8;
 }
@@ -417,7 +421,7 @@ https://codepen.io/bamf/pen/jEpxOX */
   border-radius: 10px;
 }
 
-@media (min-width: 992px){
+@media (min-width: 448px){
 
    .timeline p {
     font-size: 12px;
@@ -484,6 +488,7 @@ https://codepen.io/bamf/pen/jEpxOX */
 @media (min-width: 480px){
   .skill-container {
     max-width: 300px;
+  }
 }
 
 @media (min-width: 768px){
@@ -513,7 +518,7 @@ https://codepen.io/bamf/pen/jEpxOX */
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 8px solid #ffffff;
+    border: 8px solid #f8f8f8;
     position: absolute;
     top: 0;
     left: 0;
@@ -571,6 +576,7 @@ https://codepen.io/bamf/pen/jEpxOX */
     font-size: 24px;
     color: #000000;
     line-height: 95px;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
     position: absolute;
     top: 5%;
@@ -748,6 +754,34 @@ https://codepen.io/bamf/pen/jEpxOX */
 
 .carousel-indicators li {
   border-color: black;
+}
+
+.blurb {
+  margin-top: 40px;
+}
+
+.blurb-header {
+  float: left;
+  margin: 5px 10px 5px 0px;
+  background-color: #f9cac0;
+  padding: 5px 20px 5px 30px; 
+  font-family: 'Raleway', sans-serif;
+}
+
+.blurb-header:after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 45px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.blurb-content {
+  text-align: left;
 }
 
 /******************** skill bar ***************/
