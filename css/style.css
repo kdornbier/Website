@@ -56,7 +56,15 @@ p {
 .navbar-brand {
   padding: 0px;
   height: 60px;
+  border: none;
 }
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    border: 2px solid black !important;
+  }
+}
+
 .navbar-brand>img {
   height: 100%;
   padding: 10px;
@@ -193,6 +201,7 @@ https://codepen.io/bamf/pen/jEpxOX */
 /* f9cac0  */
 #about {
   	background-color: #f8f8f8;
+    position: relative;
 }
 
 #experience {
@@ -201,6 +210,12 @@ https://codepen.io/bamf/pen/jEpxOX */
 
 #education {
 	background-color:#f8f8f8;
+}
+
+#quote {
+  background-color: #a8a8a8;
+  font-size: 14px;
+  color: #ffffff;
 }
 
 #skills {
@@ -212,7 +227,13 @@ https://codepen.io/bamf/pen/jEpxOX */
 }
 
 #contact {
-	background-color: #f8f8f8;
+	background-color: #f9cac0;
+}
+
+#copyright {
+  background-color: #686868;
+  font-size: 12px;
+  padding: 20px;
 }
 
 .container-fluid {
@@ -476,6 +497,23 @@ https://codepen.io/bamf/pen/jEpxOX */
 .ta-right {
   text-align: right;
 
+}
+
+.quote {
+  display: inline-block;
+  font-weight: bold;
+  font-style: italic;
+  vertical-align: top;
+  padding-top: 20px;
+}
+
+.author {
+  display: inline-block;
+  border-left: 2px solid black;
+  font-size: 12px;
+  margin: 20px 0px 0px 10px;
+  padding-left: 10px;
+  padding-top: 20px;
 }
 
 /******************** skill bar ***************/
@@ -780,19 +818,70 @@ https://codepen.io/bamf/pen/jEpxOX */
   border-bottom: 15px solid transparent;
 }
 
-.blurb-content {
-  text-align: left;
+
+@media (min-width: 1100px){
+  .blurb-content {
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1099px){
+  .blurb-content {
+    text-align: left;
+    font-size: 11px;
+  }
 }
 
 /******************** skill bar ***************/
 
 .edu-half {
-  background-color: #ffffff;
+  padding: 0px 1px;
+}
+
+.edu-half .row{
   text-align: left;
-  border: 5px solid #f8f8f8;
+  border: 1px solid #f8f8f8;
+}
+
+.edu-half .row:hover .edu-info{
+    background-color: #f8f8f8;
+}
+
+
+.edu-half .row.edu-degree {
+  background-color: #f9cac0;
+  margin-right: 0px;
+}
+
+.edu-half .row.edu-project {
+  background-color: #a8a8a8;
+  color: #e5e5e5;
 }
 
 .edu-info {
-  border-bottom: 2px solid #f8f8f8;
+  background-color: #ffffff;
+  color: black;
   min-height: 200px;
+}
+
+#contact a:hover {
+  color: #ffffff;
+}
+
+.email {
+  font-size: 16px;
+}
+
+.email i {
+  font-size: 32px;
+  margin: 10px;
+}
+
+.social-media-contact {
+  font-size: 24px;
+}
+
+.social-media-contact i {
+  margin: 20px 5px 0px 5px;
 }
