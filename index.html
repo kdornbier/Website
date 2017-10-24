@@ -67,7 +67,7 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 		</div>
 		<div class="row">
 			<div class="col-xs-offset-1 col-xm-10 col-sm-offset-2 col-sm-8 col-md-offset-0 col-md-6 col-lg-offset-1 col-lg-5">
-				<p class="bio">Hi, I'm <strong>Kaitlyn Dornbier</strong>. I'm a <strong>software engineer</strong> and <strong>graphic designer </strong>based in Chicago. I've worked in front-end development, web design, and mobile applications. I love my job - it allows me to with with interesting, complex problems from both a technical and creative perspective. I prefer to approach projects as a whole, with a full understanding of how the data will be interpreted and the users will interact with the interface before diving in. I try to stick to simple, clean elements and let the ease of the experience speak for itself.</p>
+				<p class="bio">Hi, I'm <strong>Kaitlyn Dornbier</strong>. I'm a <strong>software engineer</strong> and <strong>graphic designer </strong>based in Chicago. I've worked in the full stack of development, web design, and mobile applications. I love my job - it allows me to with with interesting, complex problems from both a technical and creative perspective. I prefer to approach projects as a whole, with a full understanding of how the data will be interpreted and the users will interact with the interface before diving in. I try to stick to simple, clean elements and let the ease of the experience speak for itself.</p>
 				<div class="row">
 					<div class="col-xs-12">
 						<img class="signature" src="images/signature.png">
@@ -76,12 +76,12 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 			</div>
 			<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-md-offset-0 col-md-6 col-lg-5" id="bio-skills">
 				<div class="bio-scale">
-					Front-end Development
+					Full-Stack Development
 					<div class="bio-scale-bar bb-90"> 90%
 					</div>
 				</div>
 				<div class="bio-scale">
-					Web Design
+					Web Development
 					<div class="bio-scale-bar bb-80"> 80%
 					</div>
 				</div>
@@ -601,8 +601,45 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 	        		<a href="https://www.instagram.com/kdornbier/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-6 col-lg-5">
-					
+			<div class="col-xs-12 col-md-6 col-lg-5 contact-form">
+				<!---https://bootstraptemple.com/p/how-to-build-a-working-bootstrap-contact-form
+
+				https://www.webpagefx.com/blog/web-design/learning-php-get-started-using-php/-->
+				<form id="contact-form" method="post" action="contact.php" role="form">
+					<!--<div class="controls">-->
+    				<div class="messages"></div>
+					<div class="row">
+						<div class="col">
+							<input id="form_name" type="text" name="name" class="form-control" placeholder="Your Name *" required="required" data-error="Name is required.">
+                    		<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<input id="form_email" type="email" name="email" class="form-control" placeholder="Your Email *" required="required" data-error="Valid email is required.">
+                    		<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Your Phone">
+                    		<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<textarea id="form_message" name="message" class="form-control" placeholder="I'd love to hear from you!" rows="4" required="required" data-error="Please add a message."></textarea>
+                    		<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<p class="text-muted"><strong>*</strong> These fields are required.</p>
+							<input type="submit" class="btn btn-success btn-send" value="Send">
+						</div>
+					</div>
+					<!-- </div> end of div controls???-->
+				</form> 
 			</div>
 		</div>
 	</div>
