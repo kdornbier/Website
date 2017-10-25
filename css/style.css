@@ -42,11 +42,11 @@ p {
 	margin-bottom:0px;
 	background:rgba(0,0,0,0.5);
 	background-color: transparent;
-  background: transparent;
-  border-color: transparent;
-  font-family: 'Open Sans', sans-serif;
-  padding:10px 30px;
-  text-align: center;
+    background: transparent;
+    border-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px 30px;
+    text-align: center;
 }
 
 .icon-bar {
@@ -107,6 +107,7 @@ a, .navbar-inverse .navbar-nav>li>a{
 .nav >li >a {
   padding-top: 20px;
   padding-bottom: 20px;
+  border: 2px solid transparent;
 }
 
 .jumbotron {
@@ -871,6 +872,7 @@ https://codepen.io/bamf/pen/jEpxOX */
 
 .email {
   font-size: 16px;
+  padding-top: 40px;
 }
 
 .email i {
@@ -880,6 +882,7 @@ https://codepen.io/bamf/pen/jEpxOX */
 
 .social-media-contact {
   font-size: 24px;
+  padding-bottom: 60px;
 }
 
 .social-media-contact i {
@@ -936,5 +939,5 @@ https://codepen.io/bamf/pen/jEpxOX */
 .form-control:focus {
     outline: none !important;
     border-left: 4px solid black;
-    box-shadow: 0 0 10px white;
+    box-shadow: none;
 }
