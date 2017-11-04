@@ -605,9 +605,10 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 				<!---https://bootstraptemple.com/p/how-to-build-a-working-bootstrap-contact-form
 
 				https://www.webpagefx.com/blog/web-design/learning-php-get-started-using-php/-->
-				<form id="contact-form" method="post" action="contact.php" role="form">
+				<form id="contact-form" method="post" action="js/contact.php" role="form">
+					
+    				<div class="messages" id="messages"></div>
 					<!--<div class="controls">-->
-    				<div class="messages"></div>
 					<div class="row">
 						<div class="col">
 							<input id="form_name" type="text" name="name" class="form-control" placeholder="Your Name *" required="required" data-error="Name is required.">
@@ -634,8 +635,8 @@ https://codepen.io/bootstrapped/pen/KwYGwq
 					</div>
 					<div class="row">
 						<div class="col">
-							<p class="text-muted"><strong>*</strong> These fields are required.</p>
-							<input type="submit" class="btn btn-success btn-send" value="Send">
+							<p class="text-muted"><strong>*</strong> These fields  are required.</p>
+							<input type="submit" class="btn btn-success btn-send" id="send" value="Send">
 						</div>
 					</div>
 					<!-- </div> end of div controls???-->
@@ -659,5 +660,7 @@ https://codepen.io/bootstrapped/pen/KwYGwq
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+	<script src="js/contact.js"></script>
+	<script src="js/validator.js"></script>
   </body>
 </html>

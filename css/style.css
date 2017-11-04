@@ -936,8 +936,29 @@ https://codepen.io/bamf/pen/jEpxOX */
   color: #ffffff;
 }
 
+.btn btn-success btn-send {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.btn:focus {
+	outline: 0;
+}
+
 .form-control:focus {
     outline: none !important;
     border-left: 4px solid black;
     box-shadow: none;
+}
+
+.alert-success {
+    color: black;
+    background-color: rgba(255,255,255,0.8);
+	border: none;
+}
+
+.alert-danger {
+    color: white;
+    background-color: black;
+	border: none;
 }
