@@ -9,7 +9,7 @@ $fields = array('name' => 'Name', 'phone' => 'Phone', 'email' => 'Email', 'messa
 $okMessage = 'Thank you so much, I\'ll get back to you soon!';
 $errorMessage = 'There was an error with contacting me. Please try again later';
 
-// let's do the sending
+// Sending form
 
 try
 {

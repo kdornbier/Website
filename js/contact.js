@@ -7,10 +7,9 @@ $(function () {
 
     $('#contact-form').on('submit', function (e) {
         if (!e.isDefaultPrevented()) {
-
             var url = "js/contact.php";
             $("#messages").html("<div style=\"padding-bottom:20px\" ><i class=\"fa fa-circle-o-notch fa-spin fa-3x fa-fw\"></i></div>");
-
+            
             $.ajax({
                 type: "POST",
                 url: url,
