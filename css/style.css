@@ -49,6 +49,18 @@ p {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+	.navbar {
+		padding: 0px;
+	}
+}
+
+@media (max-width: 500px) {
+	.nav > li > a {
+		padding: 5px !important;
+	}
+}
+
 .icon-bar {
 	background-color: #000000 !important;
 }

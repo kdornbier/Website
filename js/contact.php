@@ -2,7 +2,7 @@
 
 // PHP Contact Form
 // https://bootstraptemple.com/p/how-to-build-a-working-bootstrap-contact-form
-$from = 'Contact Form <demo@domain.com>';
+$from = 'Contact Form <contact@kdornbier.com>';
 $sendTo = 'Personal Email <kaitlyndornbier@gmail.com>';
 $subject = 'New Message From Website';
 $fields = array('name' => 'Name', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); // array variable name => Text to appear in email
