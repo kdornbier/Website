@@ -1,1 +1,45 @@
-<meta http-equiv="refresh" content="0; URL='https://www.amazon.com/Kaitlyn-Dornbier/e/B07HYC3FMK/ref=sr_ntt_srch_lnk_1?qid=1539271482&sr=8-1'" />
+<!--<meta http-equiv="refresh" content="0; URL='https://www.amazon.com/Kaitlyn-Dornbier/e/B07HYC3FMK/ref=sr_ntt_srch_lnk_1?qid=1539271482&sr=8-1'" />-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+        $.ajax({
+		   url:"http://api.wipmania.com/jsonp?callback=?",
+		   dataType:"jsonp"
+		}).done(function(data){  
+
+			if(data.address.country_code == 'US') {
+				document.location.href = "https://www.amazon.com/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'CA') {
+				document.location.href = "https://www.amazon.ca/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'GB') {
+				document.location.href = "https://www.amazon.co.uk/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'DE') {
+				document.location.href = "https://www.amazon.de/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'FR') {
+				document.location.href = "https://www.amazon.fr/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'ES') {
+				document.location.href = "https://www.amazon.es/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'IT') {
+				document.location.href = "https://www.amazon.it/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'NL') {
+				document.location.href = "https://www.amazon.nl/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'FR') {
+				document.location.href = "https://www.amazon.fr/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'JP') {
+				document.location.href = "https://www.amazon.co.jp/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'IN') {
+				document.location.href = "https://www.amazon.in/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'BR') {
+				document.location.href = "https://www.amazon.com.br/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'MX') {
+				document.location.href = "https://www.amazon.com.mx/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else if(data.address.country_code == 'AU') {
+				document.location.href = "https://www.amazon.com.au/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} else {
+				document.location.href = "https://www.amazon.com/Not-Your-Grandmas-Sewing-Guide/dp/1724175416";
+			} 
+		});
+
+    }); 
+</script>
